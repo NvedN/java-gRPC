@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sec03;
+
+option java_package = "ru.nvn.models.sec03";
+option java_multiple_files = true;
+
+
+message Book{
+  string title = 1;
+  string author = 2;
+  int32 publication_year = 3;
+}
+
+message Library{
+  string name = 1;
+  repeated Book book = 2;
+
+}

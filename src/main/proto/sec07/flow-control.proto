@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package sec07;
+
+import "google/protobuf/empty.proto";
+
+
+option java_package = "ru.nvn.models.sec07";
+option java_multiple_files = true;
+
+
+message Output{
+  int32 value = 1;
+}
+
+message RequestSize{
+  int32 size = 1;
+}
+
+
+
+service FlowControlService{
+  rpc GetMessages(stream RequestSize) returns (stream Output);
+}
